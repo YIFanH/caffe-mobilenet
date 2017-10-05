@@ -1,0 +1,12 @@
+image: py2-caffe
+assets:
+- mobilenet_deploy.prototxt
+- mobilenet.caffemodel
+- labels.txt
+input_space: 
+  image: image
+output_space: 
+  classes: json
+main:
+  type: python
+  entrypoint: serve.py::predict
